@@ -1,15 +1,22 @@
 ## Medidor de Temperatura com Arduino
 
 ## Descrição do Projeto
-Projeto que mede a temperatura com um sensor TMP36 e mostra o valor no Monitor Serial.
+Projeto que mede a temperatura com um sensor TMP36, a frequeência cardica com um potenciometro e a distência com o sencsor ultrassônico
 
 ## Objetivo da Solução
-Medir a temperatura do astronauta usando Arduino.
+Medir a temperatura do astronauta usando.
+Medir a frequência cardiaca do astronauta.
+Media a distância até objetos proximos.
 
 ## Componentes Utilizados
-- Arduino Uno  
-- Sensor TMP36  
-- Fios de conexão  
+ Arduino Uno
+ Protoboard 
+ Sensor ultrassônico HC-SR04
+ Display LCD I2C 16x2
+ Potenciômetros 
+ LED verde
+ Resistor
+ Botão 
 
 ## Explicação do Funcionamento
 O sensor lê a temperatura e envia o valor para o Arduino, que mostra o resultado no Monitor Serial.
