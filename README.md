@@ -1,1 +1,34 @@
-# GS-1-SEMESTRE---EDGE-COMPUTING
+## Medidor de Temperatura com Arduino
+
+## Descrição do Projeto
+Projeto que mede a temperatura com um sensor TMP36 e mostra o valor no Monitor Serial.
+
+## Objetivo da Solução
+Medir a temperatura do astronauta usando Arduino.
+
+## Componentes Utilizados
+- Arduino Uno  
+- Sensor TMP36  
+- Fios de conexão  
+
+## Explicação do Funcionamento
+O sensor lê a temperatura e envia o valor para o Arduino, que mostra o resultado no Monitor Serial.
+
+## Estrutura do Circuito
+- TMP36 → 5V  
+- TMP36 → A0  
+- TMP36 → GND  
+
+## Instruções de Execução
+1. Inicie o projeto;  
+2. Abra o Monitor Serial;  
+3. Veja a temperatura aparecer.
+
+
+
+## Nome completo e RM dos integrantes
+1. Lucca Schemid Braga  RM:571044
+2. Messias Macedo de Souza RM:573247
+3. João Cruz RM:571827
+4. Fabrício Zanzarine RM:572631
+5. Kaue Herculano RM:570699
