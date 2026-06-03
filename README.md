@@ -4,9 +4,9 @@
 Projeto que mede a temperatura com um sensor TMP36, a frequeência cardica com um potenciometro e a distência com o sencsor ultrassônico
 
 ## Objetivo da Solução
-Medir a temperatura do astronauta usando.
-Medir a frequência cardiaca do astronauta.
-Media a distância até objetos proximos.
+- Medir a temperatura do astronauta usando.
+- Medir a frequência cardiaca do astronauta.
+- Media a distância até objetos proximos.
 
 ## Componentes Utilizados
 - Arduino Uno
