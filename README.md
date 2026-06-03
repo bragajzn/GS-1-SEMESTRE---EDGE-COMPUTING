@@ -9,14 +9,14 @@ Medir a frequência cardiaca do astronauta.
 Media a distância até objetos proximos.
 
 ## Componentes Utilizados
- Arduino Uno
- Protoboard 
- Sensor ultrassônico HC-SR04
- Display LCD I2C 16x2
- Potenciômetros 
- LED verde
- Resistor
- Botão 
+- Arduino Uno
+- Protoboard 
+- Sensor ultrassônico HC-SR04
+- Display LCD I2C 16x2
+- Potenciômetros 
+- LED verde
+- Resistor
+- Botão 
 
 ## Explicação do Funcionamento
 O sensor lê a temperatura e envia o valor para o Arduino, que mostra o resultado no Monitor Serial.
