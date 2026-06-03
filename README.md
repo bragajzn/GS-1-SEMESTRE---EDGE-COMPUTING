@@ -207,7 +207,7 @@ Ao executar o projeto, o usuário deverá ser capaz de:
 
 Preencher com os nomes completos dos integrantes:
 
-1. Fabrício Zanzarine de Oliveira Leme RM: 57263
+1. Fabrício Zanzarine de Oliveira Leme RM: 572631
 2. Messias Macedo de Souza             RM: 573247
 3. João Pedro da Cruz                  RM: 571827
 4. Kaue Herculano Guimaraes de Barros  RM: 570699
