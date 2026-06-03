@@ -1,0 +1,105 @@
+#include <LiquidCrystal_I2C.h>
+#include <Wire.h>
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+const int tempPin = A0;
+const int bpmPin = A1;
+
+const int trigPin = 9;
+const int echoPin = 10;
+
+const int ledPin = 7;
+const int buttonPin = 2;
+
+bool sistemaLigado = false;
+bool ultimoEstado = HIGH;
+unsigned long ultimoClique = 0;
+
+float distancia = 0;
+float temperatura = 0;
+int bpm = 0;
+
+void setup() {
+
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+
+  pinMode(ledPin, OUTPUT);
+
+  pinMode(buttonPin, INPUT_PULLUP);
+
+  lcd.init();
+  lcd.backlight();
+
+  lcd.setCursor(0, 0);
+  lcd.print("Sistema OFF");
+}
+
+float medirDistancia() {
+
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+
+  digitalWrite(trigPin, LOW);
+
+  long duracao = pulseIn(echoPin, HIGH);
+
+  return duracao * 0.0343 / 2;
+}
+
+void loop() {
+
+  bool leituraBotao = digitalRead(buttonPin);
+
+  if (ultimoEstado == HIGH &&
+      leituraBotao == LOW &&
+      (millis() - ultimoClique > 250)) {
+
+    sistemaLigado = !sistemaLigado;
+    ultimoClique = millis();
+  }
+
+  ultimoEstado = leituraBotao;
+
+  digitalWrite(ledPin, sistemaLigado);
+
+  if (!sistemaLigado) {
+
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Sistema OFF");
+    delay(300);
+
+    return;
+  }
+
+  int tempRaw = analogRead(tempPin);
+  temperatura = map(tempRaw, 0, 1023, 350, 420) / 10.0;
+
+  int bpmRaw = analogRead(bpmPin);
+  bpm = map(bpmRaw, 0, 1023, 60, 180);
+
+  distancia = medirDistancia();
+
+  lcd.clear();
+
+  lcd.setCursor(0, 0);
+  lcd.print("T:");
+  lcd.print(temperatura, 1);
+  lcd.print("C");
+
+  lcd.setCursor(10, 0);
+  lcd.print("FC:");
+  lcd.print(bpm);
+
+  lcd.setCursor(0, 1);
+  lcd.print("D:");
+  lcd.print(distancia, 1);
+  lcd.print("cm");
+
+  delay(50);
+}
